@@ -3,14 +3,14 @@
 /**
  * _printf - function that produces output according to a format
  *
- * @format: -
- *
+ * @format: is a list of types of arguments passed to the function
  * Return: int
  */
 
 int _printf(const char *format, ...)
 {
 	va_list args;
+
 	va_start(args, format);
 
 	int count = 0;
@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 
 	while ((x = *format++) != '\0')
 	{
-		if (c == '%')
+		if (x == '%')
 			switch (*format++)
 			{
 				case 'c':
@@ -26,21 +26,21 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				case 's':
+				{
 					const char *str = va_arg(args, const char *);
-					while (*str != '\0')
 					{
+						while (*str != '\0')
 						_putchar(*str++);
 						count++;
+						break;
 					}
-					break;
+				}
 				case '%':
 					_putchar('%');
 					count++;
 					break;
 				default:
-					// unsupported conversion specifier
 					break;
-				else
 				{
 					_putchar(x);
 					count++;
