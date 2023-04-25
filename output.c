@@ -3,19 +3,19 @@
 /**
  * _printf - function that produces output according to a format
  *
- * @format: is a list of types of arguments passed to the function
+ * @format: is the string format
+ * @count: -
  * Return: int
  */
 
 int _printf(const char *format, ...)
 {
+	char x;
+	int count;
 	va_list args;
 
 	va_start(args, format);
-
-	int count = 0;
-	char x;
-
+	count = 0;
 	while ((x = *format++) != '\0')
 	{
 		if (x == '%')
