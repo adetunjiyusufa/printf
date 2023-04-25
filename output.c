@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 			switch (*format++)
 			{
 				case 'c':
-					_putchar(va_arg(args, int));
+					printf("%c", va_arg(args, int));
 					count++;
 					break;
 				case 's':
@@ -30,19 +30,19 @@ int _printf(const char *format, ...)
 					const char *str = va_arg(args, const char *);
 					{
 						while (*str != '\0')
-						_putchar(*str++);
+						printf("%s", *str++);
 						count++;
 						break;
 					}
 				}
 				case '%':
-					_putchar('%');
+					printf("'\%'", '%');
 					count++;
 					break;
 				default:
 					break;
 				{
-					_putchar(x);
+					printf("\n", x);
 					count++;
 				}
 			}
