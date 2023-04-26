@@ -4,9 +4,10 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int printf(const char *__restrict __format, ...);
+
 
 #endif

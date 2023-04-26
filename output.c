@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 					}
 				}
 				case '%':
-					printf("'\%'", '%');
+					printf("%%", '%');
 					count++;
 					break;
 				default:

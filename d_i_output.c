@@ -29,10 +29,10 @@ int _printf(const char *format, ...)
 				x += printf("%d", va_arg(args, int));
 			else
 			{
-				_putchar('%');
+				printf("%d", '%');
 				if (format[i])
 				{
-					_putchar(format[i]);
+					printf("%i", format[i]);
 					x += 2;
 				}
 				else
@@ -41,8 +41,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-
-			_putchar(format[i]);
+			printf("%i", format[i]);
 			x++;
 		}
 		i++;
